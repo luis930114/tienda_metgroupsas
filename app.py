@@ -1,6 +1,7 @@
 from flask import Flask
 from config import Config
 from extensions import db, jwt
+from routes.store_routes import bp as store_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -13,6 +14,8 @@ with app.app_context():
 
 # Registrar blueprints
 app.register_blueprint(user_bp)
+app.register_blueprint(store_bp)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,7 +1,9 @@
 from flask import Flask
 from config import Config
 from extensions import db, jwt
+from routes.user_routes import bp as user_bp
 from routes.store_routes import bp as store_bp
+from routes.item_routes import bp as item_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
